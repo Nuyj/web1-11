@@ -1,6 +1,15 @@
-var result = window.confirm('準備ok?');
-if(result){
-document.getElementById('choice').textContent = 'Okが押されました';
+var number = math.floor(Math.randam()*3);
+var answer = parseInt(window.prompt('数あてゲーム。0~2の数字を入力してください！'));
+
+var message;
+if(answer === number) {
+  message = 'あたり！';
+}else if (answer < number){
+  message = '残念！もっと大きいです';
+}else if (number > answer){
+  message = '残念！もっと小さいです';
 }else{
-  document.getElementById('choice').textContent = 'キャンセルが押されました';
+  message = '0~3の数字を入力してください';
 }
+
+document.getElementById('choice').tectContent = message;
